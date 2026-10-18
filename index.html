@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Poojitha — Data Analyst skilled in SQL, Power BI, Python and Excel. Turning raw data into business insights." />
+  <meta name="author" content="Poojitha" />
+
+  <meta property="og:title" content="Poojitha | Data Analyst" />
+  <meta property="og:description" content="SQL · Power BI · Python · Excel — Portfolio of Poojitha, Data Analyst." />
+  <meta property="og:type" content="website" />
+
+  <title>Poojitha | Data Analyst</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+</head>
+<body class="dark">
+
+  <!-- ===== LOADER ===== -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-bars">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <p class="loader-text">Loading dashboard…</p>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#hero" class="logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        </span>
+        <span class="logo-text">Poojitha<span class="logo-dot">.</span></span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <div class="scroll-progress" id="scroll-progress"></div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-content reveal">
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Open to entry-level Data Analyst roles
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Poojitha</span>.
+            <br />
+            I turn <span class="underline-swash">raw data</span> into decisions.
+          </h1>
+
+          <p class="hero-subtitle">
+            2026 B.Tech CSE graduate specializing in <strong>SQL</strong>,
+            <strong>Power BI</strong>, <strong>Python</strong> and
+            <strong>Excel</strong>. I clean, validate, and visualize data to
+            surface insights that drive real business decisions.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              View Projects
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM22 6l-10 7L2 6"/></svg>
+              Hire Me
+            </a>
+          </div>
+
+          <!-- KPI TILES -->
+          <div class="kpi-row">
+            <div class="kpi-tile">
+              <div class="kpi-top">
+                <span class="kpi-label">Projects</span>
+                <span class="kpi-trend up">▲</span>
+              </div>
+              <span class="kpi-value" data-count="3">0</span>
+              <div class="kpi-spark">
+                <span style="--h: 40%"></span><span style="--h: 65%"></span><span style="--h: 50%"></span><span style="--h: 100%"></span>
+              </div>
+            </div>
+
+            <div class="kpi-tile">
+              <div class="kpi-top">
+                <span class="kpi-label">Internships</span>
+                <span class="kpi-trend up">▲</span>
+              </div>
+              <span class="kpi-value" data-count="2">0</span>
+              <div class="kpi-spark">
+                <span style="--h: 30%"></span><span style="--h: 100%"></span><span style="--h: 55%"></span><span style="--h: 80%"></span>
+              </div>
+            </div>
+
+            <div class="kpi-tile">
+              <div class="kpi-top">
+                <span class="kpi-label">Records Analyzed</span>
+                <span class="kpi-trend up">▲</span>
+              </div>
+              <span class="kpi-value" data-count="100" data-suffix="K+">0</span>
+              <div class="kpi-spark">
+                <span style="--h: 20%"></span><span style="--h: 45%"></span><span style="--h: 75%"></span><span style="--h: 100%"></span>
+              </div>
+            </div>
+
+            <div class="kpi-tile">
+              <div class="kpi-top">
+                <span class="kpi-label">CGPA</span>
+                <span class="kpi-trend up">▲</span>
+              </div>
+              <span class="kpi-value" data-count="7.9" data-decimals="1">0</span>
+              <div class="kpi-spark">
+                <span style="--h: 60%"></span><span style="--h: 70%"></span><span style="--h: 85%"></span><span style="--h: 90%"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SQL TERMINAL -->
+        <div class="hero-visual reveal">
+          <div class="sql-card">
+            <div class="sql-header">
+              <div class="sql-dots">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              </div>
+              <span class="sql-title">analyst_query.sql</span>
+              <span class="sql-tag">PostgreSQL</span>
+            </div>
+            <pre class="sql-body"><code id="sql-code"></code><span class="sql-cursor">▊</span></pre>
+            <div class="sql-result" id="sql-result">
+              <div class="sql-result-head">
+                <span>3 rows</span>
+                <span>· 6 columns</span>
+                <span class="sql-time">0.042s</span>
+              </div>
+              <div class="sql-result-table">
+                <div class="sql-row sql-row-head">
+                  <span>tool</span><span>use</span><span>level</span>
+                </div>
+                <div class="sql-row">
+                  <span>SQL</span><span>Query · Clean</span><span class="lvl adv">Adv</span>
+                </div>
+                <div class="sql-row">
+                  <span>Power BI</span><span>Dashboard</span><span class="lvl adv">Adv</span>
+                </div>
+                <div class="sql-row">
+                  <span>Python</span><span>EDA · Viz</span><span class="lvl int">Int</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">01 — About</span>
+          <h2 class="section-title">Analytical by nature, business-minded by focus</h2>
+        </div>
+
+        <div class="about-grid">
+        <!-- PHOTO COLUMN -->
+        <div class="about-photo-col reveal">
+             <div class="about-photo-card">
+          <img src="WhatsApp Image 2026-10-08 at 1.05.05 PM.jpeg" alt="Poojitha — Data Analyst"  style="border-radius: 20px; ">
+           <span class="photo-status" title="Open to work"></span>
+            </div>
+        </div>
+          <div class="about-text reveal">
+            <p>
+              I'm a 2026 B.Tech Computer Science graduate with hands-on internship
+              experience in <strong>data quality</strong>, <strong>SQL-based validation</strong>,
+              <strong>data cleaning</strong>, <strong>exploratory data analysis</strong>, and
+              <strong>KPI reporting</strong>.
+            </p>
+            <p>
+              I enjoy the full analytics workflow — from raw, messy data to clean
+              models and clear dashboards that stakeholders actually use. My projects
+              span digital payments, workforce analytics, and e-commerce operations,
+              where I've built DAX measures, run SQL joins and aggregations, and
+              visualized insights in Power BI.
+            </p>
+            <p>
+              I'm currently seeking an <strong>entry-level Data Analyst role</strong> where I
+              can focus on accurate reporting and actionable business insights.
+            </p>
+
+         
+          <!-- DATA PIPELINE -->
+          <div class="pipeline reveal">
+            <h4 class="pipeline-title">My Workflow</h4>
+            <div class="pipeline-flow">
+              <div class="pipe-step">
+                <div class="pipe-icon">🗄️</div>
+                <span class="pipe-label">Extract</span>
+                <span class="pipe-sub">SQL · CSV · APIs</span>
+              </div>
+              <div class="pipe-arrow">→</div>
+              <div class="pipe-step">
+                <div class="pipe-icon">🧹</div>
+                <span class="pipe-label">Clean</span>
+                <span class="pipe-sub">Python · Power Query</span>
+              </div>
+              <div class="pipe-arrow">→</div>
+              <div class="pipe-step">
+                <div class="pipe-icon">📈</div>
+                <span class="pipe-label">Analyze</span>
+                <span class="pipe-sub">DAX · Pandas · SQL</span>
+              </div>
+              <div class="pipe-arrow">→</div>
+              <div class="pipe-step">
+                <div class="pipe-icon">📊</div>
+                <span class="pipe-label">Visualize</span>
+                <span class="pipe-sub">Power BI Dashboards</span>
+              </div>
+            </div>
+
+            <div class="about-facts">
+              <div class="fact">
+                <span class="fact-num">1,470</span>
+                <span class="fact-label">Employee records analyzed (HR)</span>
+              </div>
+              <div class="fact">
+                <span class="fact-num">80.11%</span>
+                <span class="fact-label">P2P transaction share found (PhonePe)</span>
+              </div>
+              <div class="fact">
+                <span class="fact-num">16.12%</span>
+                <span class="fact-label">Attrition rate identified (HR)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">02 — Skills</span>
+          <h2 class="section-title">Technical toolkit</h2>
+          <p class="section-desc">Grouped the way I actually use them — from data prep to business reporting.</p>
+        </div>
+
+        <!-- PROFICIENCY -->
+        <div class="proficiency reveal">
+          <div class="prof-item">
+            <div class="prof-head"><span>SQL</span><span class="prof-pct">90%</span></div>
+            <div class="prof-track"><div class="prof-fill" data-width="90"></div></div>
+          </div>
+          <div class="prof-item">
+            <div class="prof-head"><span>Power BI</span><span class="prof-pct">85%</span></div>
+            <div class="prof-track"><div class="prof-fill" data-width="85"></div></div>
+          </div>
+          <div class="prof-item">
+            <div class="prof-head"><span>Excel</span><span class="prof-pct">85%</span></div>
+            <div class="prof-track"><div class="prof-fill" data-width="85"></div></div>
+          </div>
+          <div class="prof-item">
+            <div class="prof-head"><span>Python (Pandas / NumPy)</span><span class="prof-pct">75%</span></div>
+            <div class="prof-track"><div class="prof-fill" data-width="75"></div></div>
+          </div>
+        </div>
+
+        <!-- SKILL GROUPS -->
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <div class="skill-group-head">
+              <span class="skill-icon">🗄️</span>
+              <h4>SQL &amp; Databases</h4>
+            </div>
+            <ul class="skill-chips">
+              <li>MySQL</li><li>PostgreSQL</li><li>Joins</li><li>Aggregations</li>
+              <li>CTEs</li><li>Subqueries</li><li>Window Functions</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-group-head">
+              <span class="skill-icon">📊</span>
+              <h4>Power BI</h4>
+            </div>
+            <ul class="skill-chips">
+              <li>Power Query</li><li>DAX</li><li>Data Modeling</li>
+              <li>KPI Reporting</li><li>Dashboard Development</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-group-head">
+              <span class="skill-icon">📗</span>
+              <h4>Excel</h4>
+            </div>
+            <ul class="skill-chips">
+              <li>Pivot Tables</li><li>VLOOKUP</li><li>XLOOKUP</li>
+              <li>Formulas</li><li>Power Query</li><li>Reporting</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-group-head">
+              <span class="skill-icon">🐍</span>
+              <h4>Python</h4>
+            </div>
+            <ul class="skill-chips">
+              <li>Pandas</li><li>NumPy</li><li>Matplotlib</li>
+              <li>Data Cleaning</li><li>EDA</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-group-head">
+              <span class="skill-icon">🧠</span>
+              <h4>Analytics</h4>
+            </div>
+            <ul class="skill-chips">
+              <li>Data Validation</li><li>EDA</li><li>Statistical Analysis</li>
+              <li>Trend Analysis</li><li>Data Visualization</li><li>Business Reporting</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <div class="skill-group-head">
+              <span class="skill-icon">🛠️</span>
+              <h4>Tools</h4>
+            </div>
+            <ul class="skill-chips">
+              <li>Git</li><li>GitHub</li><li>Jupyter Notebook</li><li>VS Code</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">03 — Projects</span>
+          <h2 class="section-title">Analytics work &amp; dashboards</h2>
+          <p class="section-desc">Real datasets, real questions, real insights.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PhonePe -->
+          <article class="project reveal">
+            <div class="project-head">
+              <div class="project-head-top">
+                <span class="project-num">01</span>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>PhonePe Pulse Digital Payment Analysis</h3>
+              <p class="project-stack">Power BI · SQL · DAX · Power Query</p>
+            </div>
+
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-num">80.11%</span>
+                <span class="metric-label">P2P share of value</span>
+              </div>
+              <div class="metric">
+                <span class="metric-num">Q4</span>
+                <span class="metric-label">Peak quarter</span>
+              </div>
+              <div class="metric">
+                <span class="metric-num">Telangana</span>
+                <span class="metric-label">Top state</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="proj-line">
+                <span class="proj-key">Prepare</span>
+                <p>Cleaned and structured transaction &amp; user data in Power Query; standardized fields, validated values, and built model relationships.</p>
+              </div>
+              <div class="proj-line">
+                <span class="proj-key">Analyze</span>
+                <p>Built DAX measures and interactive dashboards for transaction value, volume, average transaction value, registered users, and app engagement across states &amp; quarters.</p>
+              </div>
+              <div class="proj-line">
+                <span class="proj-key">Insight</span>
+                <p>Identified Q4 as the highest transaction period, Telangana as the leading state by transaction value, and peer-to-peer payments as the largest category.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- HR Analytics -->
+          <article class="project reveal">
+            <div class="project-head">
+              <div class="project-head-top">
+                <span class="project-num">02</span>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>HR Analytics Dashboard</h3>
+              <p class="project-stack">Power BI · DAX · Power Query</p>
+            </div>
+
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-num">1,470</span>
+                <span class="metric-label">Employee records</span>
+              </div>
+              <div class="metric">
+                <span class="metric-num">16.12%</span>
+                <span class="metric-label">Attrition rate</span>
+              </div>
+              <div class="metric">
+                <span class="metric-num">237</span>
+                <span class="metric-label">Employee exits</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="proj-line">
+                <span class="proj-key">Prepare</span>
+                <p>Prepared 1,470 employee records and organized demographic, compensation, job satisfaction, tenure, and attrition fields.</p>
+              </div>
+              <div class="proj-line">
+                <span class="proj-key">Analyze</span>
+                <p>Built a three-page dashboard with DAX measures for headcount, attrition rate, average income, age, and tenure, with filters for comparing employee groups.</p>
+              </div>
+              <div class="proj-line">
+                <span class="proj-key">Insight</span>
+                <p>Identified 237 exits and a 16.12% overall attrition rate; compared patterns across departments, job roles, overtime, job satisfaction, and income groups.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sales & Ops -->
+          <article class="project reveal">
+            <div class="project-head">
+              <div class="project-head-top">
+                <span class="project-num">03</span>
+                <div class="project-links">
+                  <a href="https://github.com/yourusername" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+                  </a>
+                </div>
+              </div>
+              <h3>Sales &amp; Operations Performance Analysis</h3>
+              <p class="project-stack">SQL · Python · Power BI</p>
+            </div>
+
+            <div class="project-metrics">
+              <div class="metric">
+                <span class="metric-num">Olist</span>
+                <span class="metric-label">Brazilian e-commerce</span>
+              </div>
+              <div class="metric">
+                <span class="metric-num">Multi-table</span>
+                <span class="metric-label">Joins &amp; aggregation</span>
+              </div>
+              <div class="metric">
+                <span class="metric-num">Regional</span>
+                <span class="metric-label">Revenue insights</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="proj-line">
+                <span class="proj-key">Prepare</span>
+                <p>Cleaned Brazilian e-commerce data with Python and SQL and connected customer, order, and product datasets for analysis.</p>
+              </div>
+              <div class="proj-line">
+                <span class="proj-key">Analyze</span>
+                <p>Used SQL joins, aggregations, and filtering to examine sales trends, customer purchasing, regional revenue, category demand, and delivery performance; built an interactive Power BI dashboard.</p>
+              </div>
+              <div class="proj-line">
+                <span class="proj-key">Insight</span>
+                <p>Found regional revenue concentration, category-level demand differences, repeat-purchasing patterns, and delivery-performance variation for further business investigation.</p>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">04 — Experience</span>
+          <h2 class="section-title">Internships</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
+              <span class="timeline-line"></span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <div>
+                  <h3>Data Science Intern</h3>
+                  <p class="timeline-company">Besant Technologies · Bengaluru</p>
+                </div>
+                <span class="timeline-date">May 2026 — Oct 2026</span>
+              </div>
+              <ul class="timeline-list">
+                <li>Used Python, Pandas, and NumPy for data cleaning and exploratory data analysis across project datasets.</li>
+                <li>Applied statistical methods and basic machine learning techniques to explore patterns, distributions, and relationships.</li>
+                <li>Created visualizations and summarized findings to communicate trends in analyzed datasets.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span>Python</span><span>Pandas</span><span>NumPy</span><span>EDA</span><span>Visualization</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <div class="timeline-marker">
+              <span class="timeline-dot"></span>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-head">
+                <div>
+                  <h3>Data Quality Analyst Intern</h3>
+                  <p class="timeline-company">Rooman Technologies</p>
+                </div>
+                <span class="timeline-date">May 2025 — Jul 2025</span>
+              </div>
+              <ul class="timeline-list">
+                <li>Performed SQL-based data validation to identify missing values, duplicates, and inconsistent records.</li>
+                <li>Cleaned and transformed datasets using SQL and Excel to improve data accuracy for reporting.</li>
+                <li>Supported KPI reporting and business analysis by preparing concise summaries for internal decision-making.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span>SQL</span><span>Excel</span><span>Data Quality</span><span>KPI Reporting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EDUCATION & CERTIFICATIONS ===== -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">05 — Education &amp; Certifications</span>
+          <h2 class="section-title">Academic background</h2>
+        </div>
+
+        <div class="edu-cert-grid">
+          <!-- Education -->
+          <div class="edu-col reveal">
+            <h4 class="col-title">Education</h4>
+
+            <div class="edu-card">
+              <div class="edu-head">
+                <h3>B.Tech, Computer Science Engineering</h3>
+                <span class="edu-score">CGPA 7.9/10</span>
+              </div>
+              <p class="edu-school">Sree Rama Engineering College (JNTUA)</p>
+              <span class="edu-year">2022 — 2026</span>
+            </div>
+
+            <div class="edu-card">
+              <div class="edu-head">
+                <h3>Intermediate (MPC)</h3>
+                <span class="edu-score">74%</span>
+              </div>
+              <p class="edu-school">Sri Chaitanya Junior College</p>
+              <span class="edu-year">2022</span>
+            </div>
+
+            <div class="edu-card">
+              <div class="edu-head">
+                <h3>Secondary School Certificate</h3>
+                <span class="edu-score">95%</span>
+              </div>
+              <p class="edu-school">SV Children's High School</p>
+              <span class="edu-year">2020</span>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="cert-col reveal">
+            <h4 class="col-title">Certifications</h4>
+
+            <div class="cert-card">
+              <div class="cert-icon">🎓</div>
+              <div>
+                <h3>AI &amp; Data Quality Analyst</h3>
+                <p>Rooman Technologies</p>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-icon">📊</div>
+              <div>
+                <h3>Power BI Workshop</h3>
+                <p>Tech Tip 24</p>
+              </div>
+            </div>
+
+            <div class="cert-card">
+              <div class="cert-icon">🐍</div>
+              <div>
+                <h3>Data Science Internship Certificate</h3>
+                <p>Besant Technologies</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="contact-wrap reveal">
+          <div class="contact-info">
+            <span class="section-tag">06 — Contact</span>
+            <h2 class="section-title">Let's talk data</h2>
+            <p class="contact-desc">
+              I'm actively looking for entry-level <strong>Data Analyst</strong> roles.
+              If you have an opening, a project, or just want to connect — I'd love to hear from you.
+            </p>
+
+            <div class="contact-list">
+              <a href="mailto:your@email.com" class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <span class="contact-value">ppoojitha76@email.com</span>
+                </div>
+              </a>
+              <a href="https://www.linkedin.com/in/ch-poojitha-data-analyst/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3ByaSZW1WfSkmvAL6IdU0khg%3D%3D" target="_blank" rel="noopener" class="contact-item">
+                <span class="contact-icon">💼</span>
+                <div>
+                  <span class="contact-label">LinkedIn</span>
+                  <span class="contact-value">linkedin.com/in/ch-poojitha-data-analyst</span>
+                </div>
+              </a>
+              <a href="https://github.com/ppoojitha76" target="_blank" rel="noopener" class="contact-item">
+                <span class="contact-icon">🐙</span>
+                <div>
+                  <span class="contact-label">GitHub</span>
+                  <span class="contact-value">github.com/ppoojitha76</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about the role or project…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Send Message
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+            <p class="form-status" id="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Poojitha · Data Analyst. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/ch-poojitha-data-analyst/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3ByaSZW1WfSkmvAL6IdU0khg%3D%3D" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:your@email.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <script>
+    /* =========================================================
+   Poojitha · Data Analyst Portfolio — script.js
+   ========================================================= */
+
+/* ---------- Loader ---------- */
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  setTimeout(() => loader.classList.add("hide"), 500);
+});
+
+/* ---------- Year ---------- */
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ---------- Theme ---------- */
+const themeToggle = document.getElementById("theme-toggle");
+const savedTheme = localStorage.getItem("theme");
+
+// Dark is the default (set on <body class="dark">). Respect saved choice.
+if (savedTheme === "light") document.body.classList.remove("dark");
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+});
+
+/* ---------- Mobile nav ---------- */
+const navToggle = document.getElementById("nav-toggle");
+const navLinks = document.getElementById("nav-links");
+
+navToggle.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("active");
+  navToggle.classList.toggle("active", open);
+  navToggle.setAttribute("aria-expanded", open);
+  document.body.style.overflow = open ? "hidden" : "";
+});
+
+navLinks.querySelectorAll("a").forEach((a) => {
+  a.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    navToggle.classList.remove("active");
+    navToggle.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (
+    navLinks.classList.contains("active") &&
+    !navLinks.contains(e.target) &&
+    !navToggle.contains(e.target)
+  ) {
+    navLinks.classList.remove("active");
+    navToggle.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+});
+
+/* ---------- Header + progress + back-to-top ---------- */
+const header = document.getElementById("header");
+const progress = document.getElementById("scroll-progress");
+const backToTop = document.getElementById("back-to-top");
+
+function onScroll() {
+  const y = window.scrollY;
+  header.classList.toggle("scrolled", y > 10);
+
+  const docH = document.documentElement.scrollHeight - window.innerHeight;
+  progress.style.width = (docH > 0 ? (y / docH) * 100 : 0) + "%";
+
+  backToTop.classList.toggle("show", y > 600);
+}
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+
+backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+/* ---------- Reveal on scroll ---------- */
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.12, rootMargin: "0px 0px -60px 0px" }
+);
+document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+/* ---------- Active nav link ---------- */
+const sections = document.querySelectorAll("section[id]");
+const navAnchors = document.querySelectorAll(".nav-link");
+const spy = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        navAnchors.forEach((a) =>
+          a.classList.toggle("active", a.getAttribute("href") === `#${entry.target.id}`)
+        );
+      }
+    });
+  },
+  { rootMargin: "-45% 0px -50% 0px" }
+);
+sections.forEach((s) => spy.observe(s));
+
+/* ---------- Animated KPI counters ---------- */
+const counters = document.querySelectorAll("[data-count]");
+const countObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseFloat(el.dataset.count);
+      const decimals = parseInt(el.dataset.decimals || "0", 10);
+      const suffix = el.dataset.suffix || "";
+      const duration = 1400;
+      const start = performance.now();
+
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const value = (target * eased).toFixed(decimals);
+        el.textContent = value + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      countObserver.unobserve(el);
+    });
+  },
+  { threshold: 0.4 }
+);
+counters.forEach((c) => countObserver.observe(c));
+
+/* ---------- Proficiency bars ---------- */
+const profFills = document.querySelectorAll(".prof-fill");
+const profObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        el.style.width = el.dataset.width + "%";
+        profObserver.unobserve(el);
+      }
+    });
+  },
+  { threshold: 0.4 }
+);
+profFills.forEach((f) => profObserver.observe(f));
+
+/* ---------- SQL typewriter ---------- */
+const sqlCode = document.getElementById("sql-code");
+const sqlQuery = `SELECT name, role, tools
+FROM   analysts
+WHERE  focus = 'Data Analytics'
+  AND  skills @> ARRAY['SQL','Power BI']
+ORDER  BY impact DESC
+LIMIT  1;`;
+
+let i = 0;
+function typeSQL() {
+  if (i <= sqlQuery.length) {
+    sqlCode.textContent = sqlQuery.slice(0, i);
+    i++;
+    // Slow down at newlines for readability
+    const delay = sqlQuery[i - 1] === "\n" ? 120 : 22;
+    setTimeout(typeSQL, delay);
+  }
+}
+setTimeout(typeSQL, 900);
+
+/* ---------- Smooth scroll for anchor links ---------- */
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const id = a.getAttribute("href");
+    if (id.length > 1) {
+      const target = document.querySelector(id);
+      if (target) {
+        e.preventDefault();
+        const top = target.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }
+  });
+});
+
+/* ---------- Contact form ---------- */
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  if (!name || !email || !message) {
+    status.textContent = "Please fill in all fields.";
+    status.className = "form-status error";
+    return;
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    status.textContent = "Please enter a valid email address.";
+    status.className = "form-status error";
+    return;
+  }
+
+  // Demo success — replace with Formspree / EmailJS / backend.
+  status.textContent = "Thanks! Your message has been sent. I'll get back to you soon.";
+  status.className = "form-status success";
+  form.reset();
+
+  setTimeout(() => {
+    status.textContent = "";
+    status.className = "form-status";
+  }, 5000);
+});
+    /* ---------- Loader (robust, with fallbacks) ---------- */
+function hideLoader() {
+  const loader = document.getElementById("loader");
+  if (loader) loader.classList.add("hide");
+}
+
+// 1) Hide when page fully loads
+window.addEventListener("load", () => setTimeout(hideLoader, 400));
+
+// 2) Hide when DOM is ready (in case load never fires)
+document.addEventListener("DOMContentLoaded", () => setTimeout(hideLoader, 800));
+
+// 3) Hard fallback — always hide after 2 seconds
+setTimeout(hideLoader, 2000);
+</script>
+</body>
+</html>
