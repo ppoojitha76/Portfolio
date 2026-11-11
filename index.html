@@ -1,367 +1,1006 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poojitha | Data Analyst</title>
-    <!-- Google Fonts: Space Grotesk, Inter, Fira Code -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071311">
+  <meta name="description" content="Portfolio of Cherukuru Poojitha, aspiring Data Analyst skilled in SQL, Power BI, Python and Excel.">
+
+  <title>Cherukuru Poojitha | Data Analyst</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.10.3/sql-wasm.js"></script>
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-brand" style="display: flex; align-items: center; gap: 10px; font-size: 1.3rem; letter-spacing: -0.5px;">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 3v18h18"/>
-        <path d="M18 17V9"/>
-        <path d="M13 17V5"/>
-        <path d="M8 17v-3"/>
-    </svg>
-    Poojitha<span class="brand-accent">.analyst</span>
-</div>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#contact" class="btn-contact">Contact</a></li>
-        </ul>
-        <div class="hamburger">
-            <span></span><span></span><span></span>
-        </div>
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Poojitha home">
+      <span class="brand-mark">P</span>
+      <span>POOJITHA<span class="brand-dot">.</span></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button"
+      aria-label="Open navigation" aria-expanded="false"
+      aria-controls="siteNav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#certificates" class="nav-link">Certificates</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#contact" class="nav-link nav-contact">Contact</a>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">Available for Entry-Level Roles</div>
-            <h1>Hi, I'm <span class="highlight">Poojitha</span>.<br>I turn raw data into <span class="highlight-alt">decisions</span>.</h1>
-            <p class="hero-subtitle">2026 B.Tech CSE graduate specializing in SQL, Power BI, Python, and Excel. I clean, validate, and visualize data to surface insights that drive business growth.</p>
-            <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="Poojitha_Data_Analyst_Resume.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i> Download Resume</a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-num">3+</span>
-                    <span class="stat-label">Analytics Projects</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">2</span>
-                    <span class="stat-label">Internships</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num">100K+</span>
-                    <span class="stat-label">Records Analyzed</span>
-                </div>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <!-- Interactive Data Visualization Element -->
-            <div class="chart-container">
-                <div class="chart-header">
-                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    <span class="chart-title">insights.py</span>
-                </div>
-                <div class="bar-chart">
-                    <div class="bar" style="--h: 40%; --d: 0.1s"><span class="bar-label">SQL</span></div>
-                    <div class="bar" style="--h: 75%; --d: 0.2s"><span class="bar-label">PowerBI</span></div>
-                    <div class="bar" style="--h: 60%; --d: 0.3s"><span class="bar-label">Python</span></div>
-                    <div class="bar" style="--h: 85%; --d: 0.4s"><span class="bar-label">Excel</span></div>
-                    <div class="bar" style="--h: 50%; --d: 0.5s"><span class="bar-label">ETL</span></div>
-                </div>
-                <div class="chart-footer">
-                    <code>print("Ready to analyze.")</code>
-                </div>
-            </div>
-        </div>
-    </header>
+  <main id="main">
 
-    <!-- About Section -->
-    <section id="about" class="section">
-       <div class="section-header">
-        <span class="section-tag">01 — About</span>
-        <h2>Analytical by nature,<br>business-minded by focus.</h2>
+    <!-- HOME SECTION -->
+    <section class="hero section-wrap" id="home">
+
+      <div class="hero-copy">
+
+        <p class="eyebrow">
+          <span class="status-dot"></span>
+          OPEN TO ENTRY-LEVEL OPPORTUNITIES
+        </p>
+
+        <p class="hero-greeting">Hello, I'm</p>
+
+        <h1>Cherukuru <span>Poojitha</span></h1>
+
+        <h2>
+          Aspiring
+          <span class="gradient-text typing-text" id="typing-text" aria-live="off">
+            Data Analyst
+          </span>
+        </h2>
+
+        <p class="hero-summary">
+          I work with data to find patterns, validate information and turn
+          analysis into clear reports and useful dashboards.
+        </p>
+
+        <div class="skill-line">
+          <span>SQL</span>
+          <i></i>
+          <span>Power BI</span>
+          <i></i>
+          <span>Python</span>
+          <i></i>
+          <span>Excel</span>
+        </div>
+
+        <p class="location">
+          <span>⌖</span>
+          Tirupati, Andhra Pradesh, India
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">
+            Explore my work <span>↗</span>
+          </a>
+
+          <a class="btn btn-secondary"
+             href="Poojitha_DataAnalyst_Resume.pdf" download>
+            Download resume <span>↓</span>
+          </a>
+        </div>
+
+        <div class="social-links">
+          <a href="https://github.com/ppoojitha76"
+             target="_blank" rel="noopener noreferrer">
+            GitHub ↗
+          </a>
+
+          <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-ID"
+             target="_blank" rel="noopener noreferrer">
+            LinkedIn ↗
+          </a>
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <div class="portrait-frame">
+          <div class="portrait-glow"></div>
+
+          <img
+            src="WhatsApp Image 2026-10-08 at 1.05.05 PM.jpeg"
+            alt="Portrait of Cherukuru Poojitha"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+          <div class="portrait-fallback">CP</div>
+
+          <span class="portrait-tag">DATA ANALYST</span>
+        </div>
+
+        <div class="floating-card floating-card-top">
+          <span class="mini-icon">⌘</span>
+          <span>
+            <b>SQL</b>
+            <small>Data querying</small>
+          </span>
+        </div>
+
+        <div class="floating-card floating-card-bottom">
+          <span class="mini-icon">▥</span>
+          <span>
+            <b>Power BI</b>
+            <small>Data visualization</small>
+          </span>
+        </div>
+
+      </div>
+
+      <div class="hero-proof-strip">
+        <div>
+          <strong>03</strong>
+          <span>Analytics projects</span>
+        </div>
+
+        <div>
+          <strong>02</strong>
+          <span>Internship experiences</span>
+        </div>
+
+        <div>
+          <strong>2026</strong>
+          <span>B.Tech graduate</span>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#about">
+        SCROLL TO EXPLORE <span>↓</span>
+      </a>
+
+    </section>
+
+    <!-- PORTFOLIO OVERVIEW -->
+    <section class="home-overview section-wrap reveal"
+      aria-label="Portfolio overview">
+
+      <article class="home-overview-card">
+        <span class="overview-label">FEATURED PROJECTS</span>
+        <h3>What I have built</h3>
+        <p>
+          FinShield Fraud Detection, PhonePe Transaction Analytics
+          and HR Analytics Dashboard.
+        </p>
+        <a href="#projects">Explore projects ↗</a>
+      </article>
+
+      <article class="home-overview-card">
+        <span class="overview-label">EDUCATION</span>
+        <h3>B.Tech in Computer Science</h3>
+        <p>Sree Rama Engineering College · JNTUA</p>
+        <strong>2022 – 2026 · 8.14 / 10 CGPA</strong>
+        <a href="#education">View education ↗</a>
+      </article>
+
+      <article class="home-overview-card">
+        <span class="overview-label">EXPERIENCE</span>
+        <h3>Data analytics training</h3>
+        <p>
+          Rooman Technologies and Besant Technologies
+          internship experience.
+        </p>
+        <a href="#experience">View experience ↗</a>
+      </article>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-wrap section-block reveal" id="about">
+
+      <div class="section-heading">
+        <p class="section-index">01 / INTRODUCTION</p>
+        <h2>About <span>me</span></h2>
+      </div>
+
+      <div class="about-layout">
+
+        <div class="about-panel">
+
+          <div class="about-number">01</div>
+
+          <div>
+            <p class="lead-text">
+              I am a 2026 Computer Science and Engineering graduate
+              with internship experience in data quality validation,
+              data preparation, exploratory analysis and reporting.
+            </p>
+
+            <p>
+              I use SQL, Excel, Python and Power BI to clean datasets,
+              investigate patterns and communicate findings through
+              reports and dashboards. I am looking for an entry-level
+              Data Analyst opportunity where I can contribute to
+              practical business analysis and continue developing
+              my technical skills.
+            </p>
+
+            <div class="about-facts">
+              <span><b>SQL</b> Querying</span>
+              <span><b>Power BI</b> Reporting</span>
+              <span><b>Python</b> Analysis</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="about-photo-card">
+
+          <img
+            src="WhatsApp Image 2026-10-08 at 1.05.05 PM.jpeg"
+            alt="Cherukuru Poojitha"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+
+          <div class="about-photo-fallback">CP</div>
+
+          <span class="about-photo-caption">
+            CURIOUS ABOUT DATA. FOCUSED ON INSIGHTS.
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- SQL PLAYGROUND -->
+      <div class="sql-lab" id="sql-lab">
+
+        <div class="sql-lab-intro">
+
+          <p class="section-index">TRY IT YOURSELF</p>
+
+          <h3>SQL <span>playground</span></h3>
+
+          <p>
+            Write a query, run it in your browser and inspect the result.
+            The playground starts with a small sample sales table.
+          </p>
+
+          <div class="sql-info">
+            <span class="sql-live-dot"></span>
+            <span id="sqlEngineStatus">Starting SQL engine...</span>
+          </div>
+
+          <div class="sql-shortcuts">
+            <span>SELECT</span>
+            <span>WHERE</span>
+            <span>GROUP BY</span>
+            <span>ORDER BY</span>
+          </div>
+
+          <p class="sql-note">
+            Runs locally in your browser using SQLite.
+            It does not connect to a live MySQL server.
+          </p>
+
+        </div>
+
+        <div class="sql-workbench">
+
+          <div class="sql-toolbar">
+            <div>
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <b>query.sql</b>
+            </div>
+
+            <button type="button" id="resetSql">
+              Reset example
+            </button>
+          </div>
+
+          <label class="sr-only" for="sqlEditor">
+            Write SQL query
+          </label>
+
+          <textarea id="sqlEditor"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="off">SELECT
+    region,
+    COUNT(*) AS total_orders,
+    ROUND(SUM(amount), 2) AS total_sales
+FROM sales
+GROUP BY region
+ORDER BY total_sales DESC;</textarea>
+
+          <div class="sql-actions">
+            <span>Ctrl + Enter to run</span>
+
+            <button type="button"
+              class="btn btn-primary"
+              id="runSql">
+              ▶ Run query
+            </button>
+          </div>
+
+          <div class="sql-output-head">
+            <b>Query result</b>
+            <span id="sqlResultMeta">Waiting for query</span>
+          </div>
+
+          <div class="sql-output" id="sqlOutput" aria-live="polite">
+            <div class="sql-empty">
+              Run the example query to see the result table.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section-wrap section-block reveal" id="skills">
+
+      <div class="section-heading">
+        <p class="section-index">02 / TOOLKIT</p>
+        <h2>Skills &amp; <span>tools</span></h2>
+        <p class="section-description">
+          Tools and methods I use to prepare, analyse and present data.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+
+        <article class="skill-card">
+          <div class="skill-card-top">
+            <span class="skill-symbol">SQL</span>
+            <span class="skill-category">DATABASES</span>
+          </div>
+
+          <h3>SQL &amp; Databases</h3>
+          <p>Querying, transforming and validating structured data.</p>
+
+          <div class="tag-list">
+            <span>MySQL</span>
+            <span>PostgreSQL</span>
+            <span>Joins</span>
+            <span>CTEs</span>
+            <span>Subqueries</span>
+            <span>Window Functions</span>
+            <span>Aggregations</span>
+            <span>Data Validation</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-card-top">
+            <span class="skill-symbol">▥</span>
+            <span class="skill-category">BUSINESS INTELLIGENCE</span>
+          </div>
+
+          <h3>Power BI</h3>
+          <p>Building interactive reports and tracking business metrics.</p>
+
+          <div class="tag-list">
+            <span>Power Query</span>
+            <span>DAX</span>
+            <span>Data Modelling</span>
+            <span>KPI Reporting</span>
+            <span>Dashboards</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-card-top">
+            <span class="skill-symbol">Py</span>
+            <span class="skill-category">PROGRAMMING</span>
+          </div>
+
+          <h3>Python</h3>
+          <p>Preparing datasets and exploring patterns with code.</p>
+
+          <div class="tag-list">
+            <span>Pandas</span>
+            <span>NumPy</span>
+            <span>Matplotlib</span>
+            <span>Seaborn</span>
+            <span>Data Cleaning</span>
+            <span>EDA</span>
+          </div>
+        </article>
+
+        <article class="skill-card">
+          <div class="skill-card-top">
+            <span class="skill-symbol">X</span>
+            <span class="skill-category">SPREADSHEETS</span>
+          </div>
+
+          <h3>Excel</h3>
+          <p>Summarising data and preparing structured reports.</p>
+
+          <div class="tag-list">
+            <span>Pivot Tables</span>
+            <span>Pivot Charts</span>
+            <span>VLOOKUP</span>
+            <span>XLOOKUP</span>
+            <span>Slicers</span>
+            <span>Conditional Formatting</span>
+          </div>
+        </article>
+
+        <article class="skill-card skill-card-wide">
+          <div class="skill-card-top">
+            <span class="skill-symbol">↗</span>
+            <span class="skill-category">ANALYTICS &amp; TOOLS</span>
+          </div>
+
+          <h3>Analysis methods &amp; workflow</h3>
+          <p>Applying practical methods to check and communicate data.</p>
+
+          <div class="tag-list">
+            <span>Data Quality</span>
+            <span>Descriptive Statistics</span>
+            <span>Trend Analysis</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>Jupyter</span>
+            <span>VS Code</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section-wrap section-block reveal" id="experience">
+
+      <div class="section-heading">
+        <p class="section-index">03 / EXPERIENCE</p>
+        <h2>Internship <span>experience</span></h2>
+      </div>
+
+      <div class="timeline">
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">MAY 2026 – OCT 2026</div>
+
+          <div class="timeline-content">
+            <span class="type-label">INTERNSHIP / TRAINING</span>
+
+            <h3>Data Science Intern</h3>
+
+            <p class="company">
+              Besant Technologies <span>· Bengaluru</span>
+            </p>
+
+            <ul>
+              <li>Prepared datasets using Python, Pandas and NumPy.</li>
+              <li>Checked data types, missing values and duplicate records.</li>
+              <li>Performed exploratory analysis and descriptive statistics.</li>
+              <li>Created charts and visual summaries to communicate observations.</li>
+            </ul>
+          </div>
+
+        </article>
+
+        <article class="timeline-item">
+
+          <div class="timeline-date">MAY 19, 2025 – JUL 14, 2025</div>
+
+          <div class="timeline-content">
+            <span class="type-label">INTERNSHIP</span>
+
+            <h3>Data Quality Analyst Intern</h3>
+
+            <p class="company">Rooman Technologies</p>
+
+            <ul>
+              <li>Executed SQL validation queries to identify missing values, duplicates and inconsistent entries.</li>
+              <li>Cleaned and transformed datasets using SQL and Excel.</li>
+              <li>Reviewed record accuracy and investigated validation exceptions.</li>
+              <li>Prepared KPI reports and concise summaries.</li>
+            </ul>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section-wrap section-block reveal" id="projects">
+
+      <div class="section-heading">
+        <p class="section-index">04 / SELECTED WORK</p>
+        <h2>Featured <span>projects</span></h2>
+        <p class="section-description">
+          Practical projects focused on data quality, business metrics and reporting.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card project-featured">
+
+          <div class="project-image">
+            <img src="Certificates/executive-dashboard.png"
+              alt="FinShield fraud analytics dashboard">
+            <span class="project-type">POWER BI DASHBOARD</span>
+          </div>
+
+          <div class="project-body">
+            <div class="project-number">PROJECT 01</div>
+
+            <h3>FinShield Fraud Detection System</h3>
+
+            <p>
+              A financial fraud analytics solution using rule-based scoring
+              to flag potentially suspicious transactions.
+            </p>
+
+            <h4>Analysis</h4>
+
+            <ul>
+              <li>Analysed transaction, customer, merchant and fraud alert data using SQL.</li>
+              <li>Applied joins, aggregations and analytical queries.</li>
+              <li>Built a two-page Power BI report covering executive metrics and fraud intelligence.</li>
+              <li>Reviewed fraud cases, risk distribution, payment methods, locations and merchant exposure.</li>
+            </ul>
+
+            <div class="tag-list">
+              <span>MySQL</span>
+              <span>SQL</span>
+              <span>Power BI</span>
+              <span>Power Query</span>
+              <span>DAX</span>
+            </div>
+
+            <a class="project-link"
+              href="https://github.com/ppoojitha76/fraud-detection-dashboard.git"
+              target="_blank" rel="noopener noreferrer">
+              View GitHub repository ↗
+            </a>
+          </div>
+
+        </article>
+
+        <article class="project-card">
+
+          <div class="project-image">
+            <img src="Certificates/phonepe_dashboard_overview.png"
+              alt="PhonePe digital payment dashboard">
+            <span class="project-type">POWER BI DASHBOARD</span>
+          </div>
+
+          <div class="project-body">
+            <div class="project-number">PROJECT 02</div>
+
+            <h3>PhonePe Pulse Digital Payment Analysis</h3>
+
+            <p>
+              A Power BI analysis of digital payment performance across
+              states, quarters and transaction categories.
+            </p>
+
+            <h4>Analysis</h4>
+
+            <ul>
+              <li>Prepared transaction and user data.</li>
+              <li>Created data model relationships and DAX measures.</li>
+              <li>Analysed transaction value, volume, average transaction value, registered users and app engagement.</li>
+              <li>Compared state-wise, quarterly and transaction-category performance.</li>
+            </ul>
+
+            <div class="finding">
+              <b>Key findings</b>
+              <span>Q4 was the highest transaction period.</span>
+              <span>Peer-to-peer payments represented 80.11% of transaction value.</span>
+            </div>
+
+            <div class="tag-list">
+              <span>Power BI</span>
+              <span>SQL</span>
+              <span>DAX</span>
+              <span>Power Query</span>
+            </div>
+
+            <a class="project-link"
+              href="https://github.com/ppoojitha76/phonepe-transaction-analytics"
+              target="_blank" rel="noopener noreferrer">
+              View GitHub repository ↗
+            </a>
+          </div>
+
+        </article>
+
+        <article class="project-card">
+
+          <div class="project-image">
+            <img src="Certificates/01_Overview.png"
+              alt="HR analytics dashboard">
+            <span class="project-type">POWER BI DASHBOARD</span>
+          </div>
+
+          <div class="project-body">
+            <div class="project-number">PROJECT 03</div>
+
+            <h3>HR Analytics Dashboard</h3>
+
+            <p>
+              A three-page Power BI dashboard analysing workforce attrition
+              across 1,470 employee records.
+            </p>
+
+            <h4>Analysis</h4>
+
+            <ul>
+              <li>Analysed employee headcount, attrition, compensation, job satisfaction and tenure.</li>
+              <li>Compared attrition by department, job role, overtime and income group.</li>
+              <li>Used DAX and Power Query to prepare reporting measures.</li>
+            </ul>
+
+            <div class="metric-pair">
+              <div>
+                <b>237</b>
+                <span>Employee exits</span>
+              </div>
+
+              <div>
+                <b>16.12%</b>
+                <span>Attrition rate</span>
+              </div>
+            </div>
+
+            <div class="tag-list">
+              <span>Power BI</span>
+              <span>DAX</span>
+              <span>Power Query</span>
+            </div>
+
+            <a class="project-link"
+              href="https://github.com/ppoojitha76/HR-Analytics-Dashboard"
+              target="_blank" rel="noopener noreferrer">
+              View GitHub repository ↗
+            </a>
+          </div>
+
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section class="section-wrap section-block reveal" id="certificates">
+
+      <div class="section-heading">
+        <p class="section-index">05 / CREDENTIALS</p>
+        <h2>Certificates &amp; <span>training</span></h2>
+        <p class="section-description">
+          Training and certifications relevant to data analytics.
+        </p>
+      </div>
+
+      <div class="cert-grid">
+
+        <article class="cert-card">
+          <div class="cert-preview">
+            <iframe src="Data%20Science.pdf#toolbar=0&navpanes=0"
+              title="Data Science certificate preview" loading="lazy"></iframe>
+          </div>
+
+          <div class="cert-info">
+            <h3>Data Science with AI Training</h3>
+            <p>Besant Technologies · 15 October 2026</p>
+          </div>
+
+          <div class="cert-actions">
+            <button class="text-button view-certificate"
+              data-pdf="Data Science.pdf"
+              data-title="Data Science with AI Training">
+              View certificate ↗
+            </button>
+
+            <a href="Data Science.pdf" download>Download ↓</a>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-preview">
+            <iframe src="Certificates/Rooman_Certificate.pdf#toolbar=0&navpanes=0"
+              title="Rooman certificate preview" loading="lazy"></iframe>
+          </div>
+
+          <div class="cert-info">
+            <h3>AI – Data Quality Analyst</h3>
+            <p>Rooman Technologies · 19 May to 14 July 2025</p>
+          </div>
+
+          <div class="cert-actions">
+            <button class="text-button view-certificate"
+              data-pdf="Certificates/Rooman_Certificate.pdf"
+              data-title="AI – Data Quality Analyst">
+              View certificate ↗
+            </button>
+
+            <a href="Certificates/Rooman_Certificate.pdf" download>
+              Download ↓
+            </a>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-preview">
+            <iframe src="Certificates/sql_advanced%20certificate.pdf#toolbar=0&navpanes=0"
+              title="SQL Advanced certificate preview" loading="lazy"></iframe>
+          </div>
+
+          <div class="cert-info">
+            <h3>SQL Advanced Skill Certification</h3>
+            <p>HackerRank · 6 November 2026</p>
+          </div>
+
+          <div class="cert-actions">
+            <button class="text-button view-certificate"
+              data-pdf="Certificates/sql_advanced%20certificate.pdf"
+              data-title="SQL Advanced Skill Certification">
+              View certificate ↗
+            </button>
+
+            <a href="Certificates/sql_advanced%20certificate.pdf" download>
+              Download ↓
+            </a>
+          </div>
+        </article>
+
+        <article class="cert-card">
+          <div class="cert-preview">
+            <iframe src="Certificates/Document_1762080820414.pdf#toolbar=0&navpanes=0"
+              title="Power BI workshop certificate preview" loading="lazy"></iframe>
+          </div>
+
+          <div class="cert-info">
+            <h3>Data Analytics Using Power BI Workshop</h3>
+            <p>Tech Tip 24 · 2 November 2025</p>
+          </div>
+
+          <div class="cert-actions">
+            <button class="text-button view-certificate"
+              data-pdf="Certificates/Document_1762080820414.pdf"
+              data-title="Data Analytics Using Power BI Workshop">
+              View certificate ↗
+            </button>
+
+            <a href="Certificates/Document_1762080820414.pdf" download>
+              Download ↓
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="section-wrap section-block reveal" id="education">
+
+      <div class="section-heading">
+        <p class="section-index">06 / EDUCATION</p>
+        <h2>Academic <span>background</span></h2>
+      </div>
+
+      <div class="education-list">
+
+        <article class="education-item">
+          <span class="education-year">2022 – 2026</span>
+
+          <div>
+            <h3>B.Tech, Computer Science and Engineering</h3>
+            <p>Sree Rama Engineering College · JNTUA</p>
+          </div>
+
+          <strong>8.14 / 10 CGPA</strong>
+        </article>
+
+        <article class="education-item">
+          <span class="education-year">2020 – 2022</span>
+
+          <div>
+            <h3>Intermediate, MPC</h3>
+            <p>Sri Chaitanya Junior College</p>
+          </div>
+
+          <strong>74%</strong>
+        </article>
+
+        <article class="education-item">
+          <span class="education-year">2020</span>
+
+          <div>
+            <h3>SSC</h3>
+            <p>SV Children's High School</p>
+          </div>
+
+          <strong>95%</strong>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section-wrap section-block contact-section reveal"
+      id="contact">
+
+      <div class="section-heading">
+        <p class="section-index">07 / GET IN TOUCH</p>
+        <h2>Let's <span>connect</span></h2>
+        <p class="section-description">
+          Open to entry-level Data Analyst roles and relevant internship opportunities.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-copy">
+
+          <h3>Have an opportunity or a project in mind?</h3>
+
+          <p>
+            You can reach me through email, phone or the profiles below.
+          </p>
+
+          <a class="contact-detail" href="mailto:ppoojitha76@gmail.com">
+            <span class="contact-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+              Email
+            </span>
+            <b>ppoojitha76@gmail.com ↗</b>
+          </a>
+
+          <a class="contact-detail" href="tel:+916305421843">
+            <span class="contact-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 5c0-1 1-2 2-2Z"></path>
+              </svg>
+              Phone
+            </span>
+            <b>+91 6305421843</b>
+          </a>
+
+          <a class="contact-detail"
+            href="https://github.com/ppoojitha76"
+            target="_blank" rel="noopener noreferrer">
+
+            <span class="contact-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 19c-4 1-4-2-6-2m12 4v-3a3 3 0 0 0-1-2c4 0 7-2 7-7a5 5 0 0 0-1-3 5 5 0 0 0 0-4s-2 0-4 2a14 14 0 0 0-8 0C6 2 4 2 4 2a5 5 0 0 0 0 4 5 5 0 0 0-1 3c0 5 3 7 7 7a3 3 0 0 0-1 2v3"></path>
+              </svg>
+              GitHub
+            </span>
+
+            <b>github.com/ppoojitha76 ↗</b>
+          </a>
+
+          <a class="contact-detail"
+            href="https://www.linkedin.com/in/ch-poojitha-data-analyst/"
+            target="_blank" rel="noopener noreferrer">
+
+            <span class="contact-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 9v10M5 5v.1M10 19v-6a4 4 0 0 1 8 0v6M10 9v10"></path>
+              </svg>
+              LinkedIn
+            </span>
+
+            <b>View LinkedIn profile ↗</b>
+          </a>
+
+          <div class="contact-detail">
+            <span class="contact-label">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                <circle cx="12" cy="10" r="2.5"></circle>
+              </svg>
+              Location
+            </span>
+
+            <b>Tirupati, Andhra Pradesh, India</b>
+          </div>
+
+        </div>
+
+        <!-- CONTACT FORM -->
+        <form class="contact-form" id="contactForm" novalidate>
+
+          <h3>Send a message</h3>
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text"
+            placeholder="Your name" required>
+          <small class="field-error" id="error-name"></small>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email"
+            placeholder="you@example.com" required>
+          <small class="field-error" id="error-email"></small>
+
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text"
+            placeholder="What is this about?" required>
+          <small class="field-error" id="error-subject"></small>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"
+            placeholder="Write your message..." required></textarea>
+          <small class="field-error" id="error-message"></small>
+
+          <button class="btn btn-primary form-submit" type="submit">
+            Open in email app <span>↗</span>
+          </button>
+
+          <p class="form-note" id="formStatus">
+            This form opens your email application.
+            It does not send messages through a server.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <a class="brand" href="#home">
+      <span class="brand-mark">P</span>
+      <span>POOJITHA<span class="brand-dot">.</span></span>
+    </a>
+
+    <p>Designed and built by Cherukuru Poojitha</p>
+
+    <span>
+      © <span id="year"></span> All rights reserved.
+    </span>
+
+  </footer>
+
+  <!-- CERTIFICATE VIEWER -->
+  <dialog class="pdf-dialog" id="pdfDialog"
+    aria-labelledby="pdfTitle">
+
+    <div class="pdf-dialog-head">
+      <h2 id="pdfTitle">Certificate</h2>
+
+      <div>
+        <a id="pdfDownload" href="#" download>Download ↓</a>
+        <button id="pdfClose" type="button"
+          aria-label="Close certificate">
+          ✕
+        </button>
+      </div>
     </div>
-      
-            <div class="about-grid">
-            <div class="about-text">
-                <p>I'm a 2026 B.Tech Computer Science graduate with hands-on internship experience in <strong>data quality</strong>, <strong>SQL-based validation</strong>, and <strong>KPI reporting</strong>.</p>
-                <p>I enjoy the full analytics workflow — from raw, messy data to clean models and clear dashboards that stakeholders actually use. My projects span digital payments, workforce analytics, and e-commerce operations.</p>
-                <p>I'm currently seeking an <strong>entry-level Data Analyst role</strong> where I can focus on accurate reporting and actionable business insights.</p>
-            </div>
-            
-            <!-- YOUR PHOTO GOES HERE -->
-            <div class="about-photo-wrapper">
-                <div class="about-photo-glow"></div>
-                <img src="WhatsApp Image 2026-10-08 at 1.05.05 PM.jpeg" alt="Poojitha - Data Analyst" class="about-photo">
-            </div>
-        </div>
 
-        <!-- Highlight Cards Moved Below -->
-        <div class="about-highlights" style="margin-top: 3rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-            <div class="highlight-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h4>Location</h4>
-                <p>India (Open to Remote)</p>
-            </div>
-            <div class="highlight-card">
-                <i class="fas fa-briefcase"></i>
-                <h4>Focus</h4>
-                <p>Data Analysis & Visualization</p>
-            </div>
-            <div class="highlight-card">
-                <i class="fas fa-graduation-cap"></i>
-                <h4>Education</h4>
-                <p>B.Tech CSE '26</p>
-            </div>
-            <div class="highlight-card">
-                <i class="fas fa-chart-line"></i>
-                <h4>Core Tools</h4>
-                <p>SQL · Power BI · Python</p>
-            </div>
-        </div>
-    </section>
+    <iframe id="pdfFrame" title="Certificate preview"></iframe>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section bg-alt">
-        <div class="section-header">
-            <span class="section-tag">02 — Skills</span>
-            <h2>Technical toolkit.</h2>
-        </div>
-        <div class="skills-matrix">
-            <div class="skill-category">
-                <h3><i class="fas fa-database"></i> SQL & Databases</h3>
-                <div class="skill-tags">
-                    <span>MySQL</span><span>PostgreSQL</span><span>Joins</span><span>Aggregations</span><span>CTEs</span><span>Window Functions</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-chart-pie"></i> Power BI</h3>
-                <div class="skill-tags">
-                    <span>Power Query</span><span>DAX</span><span>Data Modeling</span><span>KPI Reporting</span><span>Dashboard Dev</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fab fa-python"></i> Python</h3>
-                <div class="skill-tags">
-                    <span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Data Cleaning</span><span>EDA</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-file-excel"></i> Excel</h3>
-                <div class="skill-tags">
-                    <span>Pivot Tables</span><span>VLOOKUP</span><span>XLOOKUP</span><span>Power Query</span><span>Reporting</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-brain"></i> Analytics</h3>
-                <div class="skill-tags">
-                    <span>Data Validation</span><span>EDA</span><span>Statistical Analysis</span><span>Trend Analysis</span><span>Business Reporting</span>
-                </div>
-            </div>
-            <div class="skill-category">
-                <h3><i class="fas fa-tools"></i> Tools</h3>
-                <div class="skill-tags">
-                    <span>Git</span><span>GitHub</span><span>Jupyter</span><span>VS Code</span>
-                </div>
-            </div>
-        </div>
-    </section>
+  </dialog>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="section-header">
-            <span class="section-tag">03 — Projects</span>
-            <h2>Analytics work & dashboards.</h2>
-        </div>
-        <div class="projects-grid">
-            <!-- Project 1: PhonePe -->
-            <article class="project-card">
-                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
-                    <i class="fas fa-mobile-alt project-icon"></i>
-                </div>
-                <div class="project-info">
-                    <div class="project-meta">
-                        <span class="project-tag">Power BI</span><span class="project-tag">SQL</span><span class="project-tag">DAX</span>
-                    </div>
-                    <h3>PhonePe Pulse Digital Payment Analysis</h3>
-                    <p>Cleaned and structured transaction data in Power Query. Built DAX measures and interactive dashboards to analyze transaction value, volume, and user engagement across states and quarters.</p>
-                    <div class="project-insights">
-                        <span><strong>80.11%</strong> P2P share</span>
-                        <span><strong>Q4</strong> Peak quarter</span>
-                        <span><strong>Telangana</strong> Top state</span>
-                    </div>
-                    <a href="https://github.com/ppoojitha76" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- Project 2: HR Analytics -->
-            <article class="project-card">
-                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
-                    <i class="fas fa-users project-icon"></i>
-                </div>
-                <div class="project-info">
-                    <div class="project-meta">
-                        <span class="project-tag">Power BI</span><span class="project-tag">DAX</span><span class="project-tag">Power Query</span>
-                    </div>
-                    <h3>HR Analytics Dashboard</h3>
-                    <p>Prepared 1,470 employee records. Built a three-page dashboard with DAX measures for headcount, attrition rate, average income, and tenure, with filters for comparing employee groups.</p>
-                    <div class="project-insights">
-                        <span><strong>1,470</strong> Records</span>
-                        <span><strong>16.12%</strong> Attrition rate</span>
-                        <span><strong>237</strong> Employee exits</span>
-                    </div>
-                    <a href="https://github.com/ppoojitha76" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- Project 3: Sales & Ops -->
-            <article class="project-card">
-                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);">
-                    <i class="fas fa-chart-bar project-icon"></i>
-                </div>
-                <div class="project-info">
-                    <div class="project-meta">
-                        <span class="project-tag">SQL</span><span class="project-tag">Python</span><span class="project-tag">Power BI</span>
-                    </div>
-                    <h3>Sales & Operations Performance Analysis</h3>
-                    <p>Cleaned Brazilian e-commerce data with Python and SQL. Used SQL joins and aggregations to examine sales trends, customer purchasing, and delivery performance; built an interactive Power BI dashboard.</p>
-                    <div class="project-insights">
-                        <span><strong>Olist</strong> E-commerce</span>
-                        <span><strong>Multi-table</strong> Joins</span>
-                        <span><strong>Regional</strong> Revenue insights</span>
-                    </div>
-                    <a href="https://github.com/ppoojitha76" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-
-            <!-- Project 4: Fraud Detection -->
-                        <!-- Project 4: Fraud Detection -->
-            <article class="project-card">
-                <div class="project-img-placeholder" style="background: linear-gradient(135deg, #cb2d3e 0%, #ef473a 100%);">
-                    <i class="fas fa-shield-alt project-icon"></i>
-                </div>
-                <div class="project-info">
-                    <div class="project-meta">
-                        <span class="project-tag">Python</span>
-                        <span class="project-tag">SQL</span>
-                        <span class="project-tag">Power BI</span>
-                    </div>
-                    <h3>Fraud Detection Dashboard</h3>
-                    <p>Cleaned and transformed financial transaction datasets using Python and SQL. Performed exploratory data analysis to identify anomalous patterns and built an interactive Power BI dashboard to monitor high-risk transactions.</p>
-                    
-                    <!-- ⚠️ REPLACE THESE WITH YOUR ACTUAL NUMBERS IF YOU HAVE THEM -->
-                    <div class="project-insights">
-                        <span><strong>Anomalies</strong> Identified</span>
-                        <span><strong>High-Risk</strong> Segments</span>
-                        <span><strong>Interactive</strong> Dashboard</span>
-                    </div>
-                    
-                    <a href="https://github.com/ppoojitha76/fraud-detection-dashboard.git" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Experience & Education Section -->
-    <section id="experience" class="section bg-alt">
-        <div class="section-header">
-            <span class="section-tag">04 — Experience & Education</span>
-            <h2>Professional background.</h2>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">May 2026 — Oct 2026</span>
-                    <h3>Data Science Intern</h3>
-                    <p class="timeline-company">Besant Technologies · Bengaluru</p>
-                    <ul>
-                        <li>Used Python, Pandas, and NumPy for data cleaning and exploratory data analysis across project datasets.</li>
-                        <li>Applied statistical methods and basic machine learning techniques to explore patterns, distributions, and relationships.</li>
-                        <li>Created visualizations and summarized findings to communicate trends in analyzed datasets.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">May 2025 — Jul 2025</span>
-                    <h3>Data Quality Analyst Intern</h3>
-                    <p class="timeline-company">Rooman Technologies</p>
-                    <ul>
-                        <li>Performed SQL-based data validation to identify missing values, duplicates, and inconsistent records.</li>
-                        <li>Cleaned and transformed datasets using SQL and Excel to improve data accuracy for reporting.</li>
-                        <li>Supported KPI reporting and business analysis by preparing concise summaries for internal decision-making.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <span class="timeline-date">2022 — 2026</span>
-                    <h3>B.Tech, Computer Science Engineering</h3>
-                    <p class="timeline-company">Sree Rama Engineering College (JNTUA) · CGPA: 7.9/10</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications & Contact Section -->
-    <section id="contact" class="section">
-        <div class="contact-split">
-            <div class="certifications">
-                <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
-                    <span class="section-tag">05 — Certifications</span>
-                    <h2>Continuous learning.</h2>
-                </div>
-                <div class="cert-list">
-                    <div class="cert-item"><i class="fas fa-certificate"></i> AI & Data Quality Analyst — Rooman Technologies</div>
-                    <div class="cert-item"><i class="fas fa-certificate"></i> Power BI Workshop — Tech Tip 24</div>
-                    <div class="cert-item"><i class="fas fa-certificate"></i> Data Science Internship Certificate — Besant Technologies</div>
-                </div>
-            </div>
-            <div class="contact-form-wrapper">
-                <div class="section-header" style="text-align: left; margin-bottom: 1.5rem;">
-                    <span class="section-tag">06 — Contact</span>
-                    <h2>Let's talk data.</h2>
-                </div>
-                <p>I'm actively looking for entry-level Data Analyst roles. If you have an opening or a project, I'd love to hear from you.</p>
-                <form class="contact-form" id="contact-form">
-                    <div class="input-group">
-                        <input type="text" id="name" placeholder="Name" required>
-                    </div>
-                    <div class="input-group">
-                        <input type="email" id="email" placeholder="Email" required>
-                    </div>
-                    <div class="input-group">
-                        <textarea id="message" rows="4" placeholder="Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message <i class="fas fa-paper-plane"></i></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Poojitha. Built from scratch.</p>
-            <div class="social-links">
-                <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/ppoojitha76" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
